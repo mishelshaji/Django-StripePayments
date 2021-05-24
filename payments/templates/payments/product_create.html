@@ -1,0 +1,23 @@
+{% extends 'payments/base.html' %}
+
+{% block content %}
+<h1 class="text-center">Create Product</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelectorAll('input, textarea').forEach(e => {
+        e.classList.add('form-control');
+    })
+</script>
+{% endblock content %}
